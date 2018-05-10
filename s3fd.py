@@ -132,7 +132,8 @@ class s3fd_original(nn.Module):
 #         print("cls2")
 #         print(cls2.size())        
         reg2 = self.conv4_3_norm_mbox_loc(f4_3)
-        gen1 = self.conv4_3_norm_gender
+        gen2 = self.conv4_3_norm_gender(f4_3)
+        
         cls3 = self.conv5_3_norm_mbox_conf(f5_3)
 #         print("cls3")
 #         print(cls3.size())        
@@ -158,4 +159,4 @@ class s3fd_original(nn.Module):
         print(cls1.size())
         #return [cls1,reg1,cls2,reg2,cls3,reg3,cls4,reg4,cls5,reg5,cls6,reg6]
         #return [cls1,cls2,cls3,cls4,cls5,cls6]
-        return [cls4,gen1]
+        return [cls2,gen2]
