@@ -24,7 +24,7 @@ Having done that, you need to add Gender Classification Layers to output of dete
 on line 59 of the s3fd.py file. In the forward function too, you need to make sure the change is reflected:
 
  ```
-         gen1 = self.conv4_3_norm_gender
+         gen2 = self.conv4_3_norm_gender(f4_3)
 ```
 on line 135 of the s3fd.py file. Finally return the face classification score outputs and gender classification outputs (you do not need the bounding box location outputs but can return and not use them later).
 
